@@ -38,7 +38,7 @@ export LITELLM_URL="http://localhost:4000/chat/completions"
 export LITELLM_MASTER_KEY="your-sk-key"
 
 # The default model to use (must be mapped in your LiteLLM config)
-export LITELLM_MODEL="vertex_ai/gemini-1.5-pro"
+export LITELLM_MODEL="gemini-pro"
 ```
 
 ## Usage
@@ -59,7 +59,7 @@ Pass a prompt directly as an argument for a quick response. Great for cron jobs 
 ### Overriding the Model
 You can override the `LITELLM_MODEL` environment variable on the fly using the `-model` flag:
 ```bash
-./chat-cli -model "vertex_ai/gemini-1.5-flash" "Summarize quantum computing in 3 sentences."
+./chat-cli -model "gemini-flash" "Summarize quantum computing in 3 sentences."
 ```
 
 ## Architecture
