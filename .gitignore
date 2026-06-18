@@ -1,0 +1,15 @@
+# Binaries
+chat_cli
+chat_cli_*
+chat-cli
+
+# OS
+.DS_Store
+
+# IDEs and Editors
+.idea/
+.vscode/
+
+# Environment files
+.env
+.env.*
