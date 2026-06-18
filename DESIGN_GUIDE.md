@@ -10,6 +10,7 @@ A standout feature of this CLI is its native integration with the **Vertex AI Bu
 ### 2.1 Zero Dependencies
 The application is intentionally designed to rely exclusively on the Go standard library (`net/http`, `encoding/json`, `bufio`, `os`, etc.). 
 *   **Why?** To ensure maximum portability, lightning-fast compilation times, and zero security vulnerabilities from third-party packages. It requires no `npm install` or complex Go dependency resolution.
+*   **Cross-Compilation:** This simplicity allows the CLI to be easily cross-compiled for any platform, including niche environments like the **iSH app on iOS (iPhone/iPad)**, which runs an x86 Linux emulator. Building for it is as simple as running `GOOS=linux GOARCH=386 go build -o chat_cli_ish main.go`.
 
 ### 2.2 Server-Side Tool Execution
 Rather than manually scraping websites or managing client-side APIs, the CLI delegates tool execution to the AI provider. 

@@ -26,6 +26,16 @@ cd chat-go-cli
 go build -o chat-cli main.go
 ```
 
+### Build for iPhone / iPad (iSH app)
+
+The [iSH app](https://ish.app/) runs a Linux x86 emulator on iOS. To run this CLI natively on your iPhone or iPad, you can cross-compile the binary specifically for the 32-bit x86 architecture used by iSH:
+
+```bash
+GOOS=linux GOARCH=386 go build -o chat_cli_ish main.go
+```
+
+Then, securely transfer the `chat_cli_ish` binary to your iOS device (e.g., via SCP, wget, or a secure file drop) and make it executable within the iSH terminal.
+
 ## Configuration
 
 The CLI relies on standard environment variables. Because background tasks and **cron jobs do not load `.bashrc` or `.zshrc`**, the recommended best practice is to store your configuration in a dedicated `~/.env` file.
