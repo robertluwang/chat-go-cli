@@ -87,4 +87,4 @@ You can override the `LITELLM_MODEL` environment variable on the fly using the `
 
 ## Architecture
 
-For more details on the design principles, zero-dependency architecture, and how tool delegation works, see the [DESIGN_GUIDE.md](./DESIGN_GUIDE.md).
+For more details on the design principles, zero-dependency architecture, and how tool delegation works, see the [DESIGN.md](./DESIGN.md).
