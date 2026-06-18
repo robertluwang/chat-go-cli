@@ -28,8 +28,9 @@ go build -o chat-cli main.go
 
 ## Configuration
 
-The CLI relies on standard environment variables to connect to your LiteLLM instance. Add the following to your `~/.bashrc`, `~/.zshrc`, or `.env` file:
+The CLI relies on standard environment variables. Because background tasks and **cron jobs do not load `.bashrc` or `.zshrc`**, the recommended best practice is to store your configuration in a dedicated `~/.env` file.
 
+1. **Create a `~/.env` file:**
 ```bash
 # The endpoint where your LiteLLM proxy is running
 export LITELLM_URL="http://localhost:4000/chat/completions"
@@ -39,6 +40,18 @@ export LITELLM_MASTER_KEY="your-sk-key"
 
 # The default model to use (must be mapped in your LiteLLM config)
 export LITELLM_MODEL="gemini-pro"
+```
+
+2. **For interactive terminal use:**
+Add this line to your `~/.bashrc` or `~/.zshrc` so the variables load automatically when you open a terminal:
+```bash
+source ~/.env
+```
+
+3. **For Cron Jobs:**
+When scheduling via cron, explicitly source the `.env` file before executing the CLI, because cron runs in a minimal, non-interactive shell:
+```bash
+0 9 * * * . ~/.env && /absolute/path/to/chat-cli "What is the weather in Tokyo?" >> /tmp/weather.log
 ```
 
 ## Usage
