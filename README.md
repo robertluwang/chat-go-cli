@@ -41,15 +41,10 @@ Then, securely transfer the `chat_cli_ish` binary to your iOS device (e.g., via 
 The CLI relies on standard environment variables. Because background tasks and **cron jobs do not load `.bashrc` or `.zshrc`**, the recommended best practice is to store your configuration in a dedicated `~/.env` file.
 
 1. **Create a `~/.env` file:**
+Rename the provided `.env.template` to `~/.env`, fill in your specific values, and source it for your LiteLLM tunnel setup:
 ```bash
-# The endpoint where your LiteLLM proxy is running
-export LITELLM_URL="http://localhost:4000/chat/completions"
-
-# The master API key for your LiteLLM proxy
-export LITELLM_MASTER_KEY="your-sk-key"
-
-# The default model to use (must be mapped in your LiteLLM config)
-export LITELLM_MODEL="gemini-pro"
+cp .env.template ~/.env
+nano ~/.env # add your keys, IP, user, and SSH key
 ```
 
 2. **For interactive terminal use:**

@@ -13,3 +13,4 @@ chat-cli
 # Environment files
 .env
 .env.*
+!.env.template
